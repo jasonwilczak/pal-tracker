@@ -1,0 +1,33 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '1.5.4.RELEASE'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("com.fasterxml.jackson.core:jackson-databind")
+    compile("org.hibernate:hibernate-validator")
+    compile("org.springframework:spring-web")
+    compile("org.springframework:spring-webmvc")
+    compile("org.springframework:spring-core")
+    compile("org.springframework.boot:spring-boot")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compile("ch.qos.logback:logback-classic")
+    compile("org.slf4j:jcl-over-slf4j")
+    compile("org.slf4j:jul-to-slf4j")
+    compile("org.slf4j:log4j-over-slf4j")
+    compile("org.apache.tomcat.embed:tomcat-embed-core")
+    compile("org.apache.tomcat.embed:tomcat-embed-el")
+    compile("org.apache.tomcat.embed:tomcat-embed-websocket")
+}
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "hello"
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+])
