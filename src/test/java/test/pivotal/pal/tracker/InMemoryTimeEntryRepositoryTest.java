@@ -25,6 +25,10 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void find() throws Exception {
+<<<<<<< HEAD
+
+=======
+>>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         repo.create(new TimeEntry(123, 456, LocalDate.parse("2017-01-08"), 8));
 

@@ -8,4 +8,8 @@ public interface TimeEntryRepository {
     List<TimeEntry> list();
     TimeEntry update(Long id, TimeEntry timeEntry);
     void delete(Long id);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7
