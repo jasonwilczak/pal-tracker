@@ -25,7 +25,7 @@ dependencies {
 }
 
 bootRun.environment([
-        "WELCOME_MESSAGE": "hello from local2"
+        "WELCOME_MESSAGE": "hello from local"
 ])
 
 test.environment([
