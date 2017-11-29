@@ -11,10 +11,10 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     }
 
     @Override
-    public TimeEntry create(TimeEntry timeEntry) throws Exception {
+    public TimeEntry create(TimeEntry timeEntry) {
         timeEntry.setId(_dataStore.size()+1);
         _dataStore.add(timeEntry);
-        if(_dataStore.size()<=0) throw new Exception("No data was added!");
+        if(_dataStore.size()<=0) return null;
         return (TimeEntry) _dataStore.get(_dataStore.size()-1);
     }
 
