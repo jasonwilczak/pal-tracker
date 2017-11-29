@@ -25,6 +25,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void find() throws Exception {
+
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         repo.create(new TimeEntry(123, 456, LocalDate.parse("2017-01-08"), 8));
 
