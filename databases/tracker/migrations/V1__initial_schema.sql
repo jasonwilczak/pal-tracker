@@ -8,8 +8,4 @@ CREATE TABLE time_entries (
   PRIMARY KEY (id)
 )
   ENGINE = innodb
-<<<<<<< HEAD
   DEFAULT CHARSET = utf8;
-=======
-  DEFAULT CHARSET = utf8;
->>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7

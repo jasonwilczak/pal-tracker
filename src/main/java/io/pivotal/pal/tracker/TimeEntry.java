@@ -9,13 +9,13 @@ public class TimeEntry {
     private LocalDate date;
     private int hours;
 
-    public TimeEntry(int projectId, int userId, LocalDate entryDate, int hours) {
+    public TimeEntry(long projectId, long userId, LocalDate entryDate, int hours) {
         this.setProjectId(projectId);
         this.setUserId(userId);
         this.setDate(entryDate);
         this.setHours(hours);
     }
-    public TimeEntry(long id, int projectId, int userId, LocalDate entryDate, int hours) {
+    public TimeEntry(long id, long projectId, long userId, LocalDate entryDate, int hours) {
         this.setId(id);
         this.setProjectId(projectId);
         this.setUserId(userId);
@@ -40,7 +40,7 @@ public class TimeEntry {
     public void setDate(LocalDate date) {this.date=date;}
     public LocalDate getDate() {return this.date;}
     public void setHours(int hours) {this.hours=hours;}
-    public int getHours() {return this.hours;}
+    public long getHours() {return this.hours;}
 
     public TimeEntry update(TimeEntry dataToChange)
     {
@@ -71,7 +71,7 @@ public class TimeEntry {
         result = 31 * result + (int) (projectId ^ (projectId >>> 32));
         result = 31 * result + (int) (userId ^ (userId >>> 32));
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + hours;
+        result = (int) (31 * result + hours);
         return result;
     }
 
