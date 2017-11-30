@@ -2,8 +2,6 @@
 applications:
 - name: pal-tracker
   path: build/libs/pal-tracker.jar
-<<<<<<< HEAD
-  host: as-pal-tracker-review
-=======
-  host: jweh-pal-tracker-review
->>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7
+  host: jwas-pal-tracker-review
+  services:
+    - tracker-database

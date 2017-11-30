@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+import javax.sql.DataSource;
 
 @SpringBootApplication
 public class PalTrackerApplication {
@@ -16,9 +19,14 @@ public class PalTrackerApplication {
 
     }
 
+    private DataSource getDataSource() {
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
+        return dataSource;
+    }
     @Bean
     TimeEntryRepository timeEntryRepository() {
-        return new InMemoryTimeEntryRepository();
+        return new JdbcTimeEntryRepository(getDataSource());
     }
     @Bean
     public ObjectMapper jsonObjectMapper() {
