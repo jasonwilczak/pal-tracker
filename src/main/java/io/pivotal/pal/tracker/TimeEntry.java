@@ -9,50 +9,6 @@ public class TimeEntry {
     private LocalDate date;
     private int hours;
 
-<<<<<<< HEAD
-    public InMemoryTimeEntryRepository repo;
-
-    public TimeEntry() {
-    }
-
-    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
-        this.projectId = projectId;
-        this.userId = userId;
-        this.date = date;
-        this.hours = hours;
-    }
-
-    public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
-        this.id = id;
-        this.projectId = projectId;
-        this.userId = userId;
-        this.date = date;
-        this.hours = hours;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getProjectId() {
-        return projectId;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public int getHours() {
-        return hours;
-=======
     public TimeEntry(int projectId, int userId, LocalDate entryDate, int hours) {
         this.setProjectId(projectId);
         this.setUserId(userId);
@@ -93,12 +49,10 @@ public class TimeEntry {
         this.setDate(dataToChange.date);
         this.setHours(dataToChange.hours);
         return this;
->>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7
     }
 
     @Override
     public boolean equals(Object o) {
-<<<<<<< HEAD
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -132,9 +86,4 @@ public class TimeEntry {
                 '}';
     }
 
-=======
-        TimeEntry comparisonObject = (TimeEntry)o;
-        return comparisonObject != null && comparisonObject.getId()==this.getId();
-    }
->>>>>>> b28134d5e6788ac6ef8ba5e82a8b4b7fbdfa62e7
 }

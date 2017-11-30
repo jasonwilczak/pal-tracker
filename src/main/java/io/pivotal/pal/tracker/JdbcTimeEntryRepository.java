@@ -1,8 +1,17 @@
 package io.pivotal.pal.tracker;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 public class JdbcTimeEntryRepository implements TimeEntryRepository {
+
+
+    private DataSource dataSource;
+
+    public JdbcTimeEntryRepository(DataSource dataSource) {
+
+        this.dataSource = dataSource;
+    }
     @Override
     public TimeEntry create(TimeEntry timeEntry) {
         return null;
